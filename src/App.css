@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+.gunmetal {
+  background-color: #022b3a;
+}
+
+.lavenderbg {
+  color: #e1e5f2;
+}
+
+.sea-green {
+  color: #00b9ae;
+}
+
+.lavender {
+  color: #e1e5f2;
+}
+
+.lucida {
+  font-family: "Lucida Console";
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.rounded-image {
+  width: 7%; /* Adjust the width and height as needed */
+  border-radius: 50%; /* Apply a circular border radius */
+  object-fit: cover; /* Ensure the image covers the entire circular area */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
