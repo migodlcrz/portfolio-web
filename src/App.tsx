@@ -3,6 +3,15 @@ import Introduction from "./components/Introduction";
 import { useEffect, useRef, useState } from "react";
 import Pictures from "./components/Pictures";
 import About from "./components/About";
+import AboutPanel from "./components/AboutPanel";
+import { FaMobile, FaShareNodes } from "react-icons/fa6";
+import Icon from "./components/Icon";
+import HtmlLogo from "../src/images/html.png";
+import CSSLogo from "../src/images/css.png";
+import JavaScriptLogo from "../src/images/javascript.png";
+import CplusplusLogo from "../src/images/c++.png";
+import PythonLogo from "../src/images/python.png";
+import Experience from "./components/Experience";
 
 const App = () => {
   const [checked, setChecked] = useState(false);
@@ -44,6 +53,15 @@ const App = () => {
         }}
       >
         <About />
+      </div>
+      <div
+        className="Third Panel: w-full h-screen py-10 px-36"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top right, #022b3a, #256278, #5e93a6",
+        }}
+      >
+        <Experience />
       </div>
     </div>
   );
