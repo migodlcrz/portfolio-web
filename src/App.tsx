@@ -1,10 +1,16 @@
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Pictures from "./components/Pictures";
+import About from "./components/About";
 
 const App = () => {
   const [checked, setChecked] = useState(false);
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+
+  const scrollToAboutMe = () => {
+    aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     setChecked(!checked);
@@ -19,7 +25,7 @@ const App = () => {
             "linear-gradient(to top right, #022b3a, #256278, #5e93a6",
         }}
       >
-        <Header />
+        <Header scrollToAboutMe={scrollToAboutMe} />
         <div className="Card: flex flex-row my-10 h-[80%]">
           <div className="flex flex-col w-2/3 items-start">
             <Introduction />
@@ -30,13 +36,14 @@ const App = () => {
         </div>
       </div>
       <div
-        className="Second Panel: w-full h-screen"
+        ref={aboutMeRef}
+        className="Second Panel: w-full h-screen py-10 px-36"
         style={{
           backgroundImage:
             "linear-gradient(to bottom right, #022b3a, #256278, #5e93a6",
         }}
       >
-        Hello
+        <About />
       </div>
     </div>
   );

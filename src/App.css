@@ -53,9 +53,9 @@
 }
 
 .rounded-image {
-  width: 7%; /* Adjust the width and height as needed */
-  border-radius: 50%; /* Apply a circular border radius */
-  object-fit: cover; /* Ensure the image covers the entire circular area */
+  width: 7%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 @keyframes App-logo-spin {

@@ -30,7 +30,7 @@ const Introduction = () => {
   }, [showSecondTypewriter]);
 
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-start mt-6">
       <div>
         <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
           <h1 className="lavender text-5xl bebas font-bold">
@@ -39,10 +39,11 @@ const Introduction = () => {
               {/* Style will be inherited from the parent element */}
               <Typewriter
                 words={[
-                  "Migo",
+                  "Lorenzo",
                   "a Software Engineer",
                   "a Front-end Developer",
                   "a Back-end Developer",
+                  "Migo",
                 ]}
                 loop={5}
                 cursor
