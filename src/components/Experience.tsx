@@ -33,7 +33,7 @@ const Experience = () => {
             </div>
           </div>
           <div
-            className="grid grid-cols-3 gap-4 overflow-y-auto max-h-full bg-black py-6 pt-6 mt-2 rounded-2xl"
+            className="grid grid-cols-3 gap-4 overflow-y-auto max-h-full bg-black py-6 px-6 pt-6 mt-2 rounded-2xl"
             style={{
               scrollbarWidth: "thin",
               scrollbarColor: "#888 transparent",
