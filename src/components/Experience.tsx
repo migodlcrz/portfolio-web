@@ -15,7 +15,7 @@ import MongoLogo from "../images/mongodb.png";
 
 const Experience = () => {
   return (
-    <div className="Card: flex flex-col space-y-4 rounded-2xl h-[90%] p-10 items-start mt-20">
+    <div className="Card: flex flex-col space-y-4 rounded-2xl h-[90%] p-10 items-start mt-10">
       <div className="">
         <h1 className="lavender text-6xl bebas font-bold">Experiences</h1>
       </div>
