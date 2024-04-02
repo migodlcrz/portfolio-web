@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
       <div
-        className={`Header: lavender rounded-full flex flex-row justify-between fixed text-2xl z-10 py-2 pl-2 pr-10 font-bold w-[81%] ${
+        className={`Header: lavender flex flex-row justify-between fixed text-2xl z-10 p-6 pr-10 w-full font-bold ${
           headerBackground ? "bg-[#00B9AE] shadow-black shadow-md" : ""
         }`}
       >

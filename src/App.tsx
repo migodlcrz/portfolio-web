@@ -50,6 +50,12 @@ const App = () => {
 
   return (
     <div className="App">
+      <Header
+        scrollToLanding={scrollToLanding}
+        scrollToAboutMe={scrollToAboutMe}
+        scrollToExperience={scrollToExperience}
+        scrollToProject={scrollToProject}
+      />
       <div
         ref={LandingRef}
         className="First Panel: w-full h-screen py-10 px-36"
@@ -58,12 +64,6 @@ const App = () => {
             "linear-gradient(to top right, #022b3a, #256278, #5e93a6",
         }}
       >
-        <Header
-          scrollToLanding={scrollToLanding}
-          scrollToAboutMe={scrollToAboutMe}
-          scrollToExperience={scrollToExperience}
-          scrollToProject={scrollToProject}
-        />
         <div className="Card: flex flex-row my-10 h-[80%]">
           <div className="flex flex-col w-2/3 items-start">
             <Introduction />

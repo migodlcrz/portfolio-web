@@ -36,7 +36,6 @@ const Introduction = () => {
           <h1 className="lavender text-5xl bebas font-bold">
             Hi, I'm{" "}
             <span style={{ color: "#00B9AE", fontWeight: "bold" }}>
-              {/* Style will be inherited from the parent element */}
               <Typewriter
                 words={[
                   "Lorenzo",
