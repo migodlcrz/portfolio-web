@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import Avatar from "../images/avatar.png";
 import Grow from "@mui/material/Grow";
+import { FaBars } from "react-icons/fa"; // Import the hamburger icon
 
 interface HeaderProps {
   scrollToLanding: () => void;
@@ -18,21 +19,30 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const [checked, setChecked] = useState(false);
   const [headerBackground, setHeaderBackground] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Track if it's mobile
 
   useEffect(() => {
     setChecked(!checked);
-    window.addEventListener("scroll", handleScroll); // Add event listener for scroll
+    window.addEventListener("scroll", handleScroll);
+    handleResize(); // Check initial size
+    window.addEventListener("resize", handleResize); // Listen for resize changes
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Remove event listener on component unmount
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setHeaderBackground(true); // Set headerBackground to true if scrolled down
+      setHeaderBackground(true);
     } else {
-      setHeaderBackground(false); // Set headerBackground to false if scrolled to top
+      setHeaderBackground(false);
     }
+  };
+
+  const handleResize = () => {
+    // Check if the screen width is below a certain size (e.g., 768px for tablets)
+    setIsMobile(window.innerWidth <= 768);
   };
 
   return (
@@ -44,22 +54,34 @@ const Header: React.FC<HeaderProps> = ({
       >
         <div className="flex flex-row space-x-4 w-2/5 text-start">
           <img className="rounded-image" src={Avatar} />
-          <button className="hover:text-[#022B3A]" onClick={scrollToLanding}>
-            My Portfolio
-          </button>
+          {isMobile ? ( // Render hamburger icon for mobile
+            <FaBars
+              onClick={scrollToLanding}
+              className="text-[#022B3A] cursor-pointer"
+            />
+          ) : (
+            <button className="hover:text-[#022B3A]" onClick={scrollToLanding}>
+              My Portfolio
+            </button>
+          )}
         </div>
-        <div className="flex flex-row justify-between w-3/5">
-          <button className="hover:text-[#022B3A]" onClick={scrollToAboutMe}>
-            About Me
-          </button>
-          <button className="hover:text-[#022B3A]" onClick={scrollToExperience}>
-            Experience
-          </button>
-          <button className="hover:text-[#022B3A]" onClick={scrollToProject}>
-            Projects
-          </button>
-          <button className="hover:text-[#022B3A]">Contact</button>
-        </div>
+        {isMobile ? null : ( // Don't render the rest of the menu for mobile
+          <div className="flex flex-row justify-between w-3/5">
+            <button className="hover:text-[#022B3A]" onClick={scrollToAboutMe}>
+              About Me
+            </button>
+            <button
+              className="hover:text-[#022B3A]"
+              onClick={scrollToExperience}
+            >
+              Experience
+            </button>
+            <button className="hover:text-[#022B3A]" onClick={scrollToProject}>
+              Projects
+            </button>
+            <button className="hover:text-[#022B3A]">Contact</button>
+          </div>
+        )}
       </div>
     </Grow>
   );

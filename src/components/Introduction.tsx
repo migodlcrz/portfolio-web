@@ -104,7 +104,7 @@ const Introduction = () => {
         </Grow>
       </div>
       <Grow in={checked} {...(checked ? { timeout: 4000 } : {})}>
-        <button className="bg-[#1F7A8C] bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black">
+        <button className="bg-[#1F7A8C] bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black transition-transform hover:scale-105">
           Contact Me
         </button>
       </Grow>

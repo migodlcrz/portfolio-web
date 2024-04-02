@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Sample from "../images/sample.jpg";
+import Avatar from "../images/avatar.png";
 import { FaCircle } from "react-icons/fa";
 import Modal from "@mui/material/Modal";
 import { Box, Typography } from "@mui/material";
 import ProjectCard from "./ProjectCard";
+import { Carousel } from "flowbite-react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -20,43 +22,20 @@ const style = {
 const Project = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
-    <>
-      <div className="Card: flex flex-col space-y-4 h-[90%] p-10 items-start mt-10">
-        <h1 className="lavender text-6xl bebas font-bold">Projects</h1>
-        <div
-          className="flex flex-row bg-#187485 p-5 rounded-2xl"
-          // style={{
-          //   scrollbarWidth: "thin",
-          //   scrollbarColor: "#888 transparent",
-          //   WebkitOverflowScrolling: "touch",
-          // }}
-        >
-          <ProjectCard title="Project A" />
-          {/* <ProjectCard title="Project B" />
-          <ProjectCard title="Project C" />
-          <ProjectCard title="Project D" />
-          <ProjectCard title="Project E" />
-          <ProjectCard title="Project F" />
-          <ProjectCard title="Project G" />
-          <ProjectCard title="Project H" /> */}
-        </div>
+    <div className="Card: flex flex-col space-y-4 h-[90%] items-start mt-20">
+      <h1 className="lavender text-6xl bebas font-bold">Projects</h1>
+      <div className="flex flex-row bg-#187485 rounded-2xl h-full">
+        <Carousel slide={false} className="w-full h-[100%] px-20 pb-10">
+          <ProjectCard title="Project A" imageSrc={Sample} />
+          <ProjectCard title="Project B" imageSrc={Sample} />
+          <ProjectCard title="Project C" imageSrc={Sample} />
+          <ProjectCard title="Project D" imageSrc={Sample} />
+          <button className="lavender font-bold text-2xl hover:text-black">
+            See more Projects {">>"}
+          </button>
+        </Carousel>
       </div>
-      <Modal
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
-    </>
+    </div>
   );
 };
 
