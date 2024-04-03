@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="px-4 items-center">
         <button
           onClick={() => setOpenModal(!openModal)}
-          className="flex flex-col gunmetal rounded-3xl space-y-2 p-4 w-72 h-[450px] shadow-md shadow-black hover:scale-105 transition duration-300 ease-in-out"
+          className="flex flex-col gunmetal rounded-3xl space-y-2 p-4 w-72 h-auto lg:h-[450px] shadow-md shadow-black hover:scale-105 transition duration-300 ease-in-out"
         >
           <div className="image-container rounded-2xl overflow-hidden">
             <img
@@ -45,10 +45,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
           <div className="flex flex-col">
             <div>
-              <h1 className="lavender font-bold bebas text-xl text-start">
+              <h1 className="lavender font-bold bebas text-base lg:text-xl text-start">
                 {title}
               </h1>
-              <p className="lavender font-normal bebas text-md text-justify">
+              <p className="lavender font-normal bebas text-sm lg:text-base text-justify">
                 {description}
               </p>
             </div>

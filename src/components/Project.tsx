@@ -22,10 +22,10 @@ const style = {
 const Project = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="Card: flex flex-col space-y-4 h-[90%] items-start mt-20">
-      <h1 className="lavender text-6xl bebas font-bold">Projects</h1>
+    <div className="Card: flex flex-col space-y-4 h-[90%] items-start mt-48 lg:mt-20 ">
+      <h1 className="lavender text-sm lg:text-6xl bebas font-bold">Projects</h1>
       <div
-        className="flex flex-row bg-#187485 rounded-3xl h-full w-full items-center overflow-x-auto bg-black"
+        className="flex flex-row bg-#187485 rounded-3xl h-auto lg:h-full w-full items-center overflow-x-auto bg-black"
         style={{
           scrollbarWidth: "thin",
           scrollbarColor: "#888 transparent",

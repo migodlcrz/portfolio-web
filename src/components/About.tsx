@@ -7,11 +7,13 @@ import AboutPanel from "./AboutPanel";
 
 const About = () => {
   return (
-    <div className="Card: flex flex-col space-y-4 gunmetal rounded-2xl shadow-lg shadow-black h-[90%] p-10 items-start mt-20">
+    <div className="Card: flex flex-col space-y-4 gunmetal rounded-2xl shadow-lg shadow-black h-[90%] p-10 items-start mt-36 lg:mt-20">
       <div className="">
-        <h1 className="lavender text-6xl bebas font-bold">About Me</h1>
+        <h1 className="lavender text-lg lg:text-6xl bebas font-bold">
+          About Me
+        </h1>
       </div>
-      <div className="flex flex-col lg:flex-row w-full h-full space-x-10 overflow-y-auto max-h-full">
+      <div className="flex flex-col lg:flex-row w-full h-full lg:space-x-10 overflow-y-auto max-h-full">
         <div className="w-full lg:w-1/2 ">
           <AboutPanel
             title="Front-End Developer"
@@ -26,7 +28,7 @@ const About = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <AboutPanel
-            title="Machine Learning Developer"
+            title="ML Developer"
             text="Lorem ipsum dolor sit amet. In iure recusandae non voluptatem quia et culpa inventore qui voluptatem eveniet qui dolores distinctio ad adipisci voluptates At magnam voluptatem. Eum nostrum ipsam nam quis vitae ut accusamus commodi et ratione aspernatur."
             icon={FaShareNodes}
           />

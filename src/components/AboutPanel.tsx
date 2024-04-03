@@ -14,9 +14,11 @@ const AboutPanel: React.FC<AboutPanelProps> = ({ title, text, icon: Icon }) => {
         <span className="text-[#00B9AE]">
           <Icon />
         </span>
-        <span>{title}</span>
+        <span className="text-sm lg:text-2xl">{title}</span>
       </h1>
-      <p className="lavender bebas mt-4">{text}</p>
+      <p className="lavender bebas mt-4 text-xs lg:text-base text-justify">
+        {text}
+      </p>
     </div>
   );
 };

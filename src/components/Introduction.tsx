@@ -33,7 +33,7 @@ const Introduction = () => {
     <div className="flex flex-col items-start mt-6">
       <div>
         <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
-          <h1 className="lavender text-5xl bebas font-bold">
+          <h1 className="lavender text-md lg:text-3xl bebas font-bold">
             Hi, I'm{" "}
             <span style={{ color: "#00B9AE", fontWeight: "bold" }}>
               <Typewriter
@@ -57,7 +57,7 @@ const Introduction = () => {
       </div>
       <div className=" w-full mt-6">
         <Grow in={checked} {...(checked ? { timeout: 4000 } : {})}>
-          <div className="flex flex-col gunmetal lg:mr-28 rounded-2xl h-full px-3 pb-3 items-start shadow-lg shadow-black">
+          <div className="flex flex-col text-sm lg:text-base gunmetal lg:mr-28 rounded-2xl h-full px-3 pb-3 items-start shadow-lg shadow-black">
             <div className="Buttons: flex justify-between w-20 py-2">
               <div className="text-red-600 text-md">
                 <FaCircle />
