@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaCircle } from "react-icons/fa";
-import Modal from "@mui/material/Modal";
-import { Box, Typography } from "@mui/material";
+import { Modal } from "flowbite-react";
+import { Carousel } from "flowbite-react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -18,77 +18,119 @@ const style = {
 interface ProjectCardProps {
   title: string;
   imageSrc: string;
+  projLink: string;
+  description: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, imageSrc }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  imageSrc,
+  projLink,
+  description,
+}) => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <div className="h-full px-8">
-        <div className="flex flex-row gunmetal space-x-4 rounded-3xl p-4 w-full h-full mr-10 mb-5">
-          <div className="image-container rounded-2xl w-1/2 h-full overflow-hidden">
+      <div className="px-4 items-center">
+        <button
+          onClick={() => setOpenModal(!openModal)}
+          className="flex flex-col gunmetal rounded-3xl space-y-2 p-4 w-72 h-[450px] shadow-md shadow-black hover:scale-105 transition duration-300 ease-in-out"
+        >
+          <div className="image-container rounded-2xl overflow-hidden">
             <img
               src={imageSrc}
               alt="Loading Picture"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex flex-col w-1/2 space-y-4">
+          <div className="flex flex-col">
             <div>
               <h1 className="lavender font-bold bebas text-xl text-start">
                 {title}
               </h1>
               <p className="lavender font-normal bebas text-md text-justify">
-                Lorem ipsum dolor sit amet. In iure recusandae non voluptatem
-                quia et culpa inventore qui voluptatem eveniet qui dolores
-                distinctio ad adipisci voluptates At magnam voluptatem. Lorem
-                ipsum dolor sit amet. In iure recusandae non voluptatem quia et
-                culpa inventore qui voluptatem eveniet qui dolores distinctio ad
-                adipisci voluptates At magnam voluptatem. Lorem ipsum dolor sit
-                amet. In iure recusandae non voluptatem quia et culpa inventore
-                qui voluptatem eveniet qui dolores distinctio ad adipisci
-                voluptates At magnam voluptatem.
+                {description}
               </p>
             </div>
-            <div>
-              <div className="lavender text-start font-bold">Tools used:</div>
-              <div className="grid grid-cols-3 gap-3 w-full py-3">
-                <div className="flex flex-row space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-lg shadow-black">
-                  <div className="text-xs text-blue-600">
-                    <FaCircle />
-                  </div>
-                  <span>React</span>
+
+            <Modal show={openModal}>
+              <Modal.Header className="gunmetal">
+                <label className="lavender">{title}</label>
+              </Modal.Header>
+              <Modal.Body className="gunmetal space-y-4">
+                <div className="image-container rounded-2xl h-[300px]">
+                  <Carousel
+                    className="w-full h-[100%]"
+                    leftControl="."
+                    rightControl="."
+                    slideInterval={2000}
+                  >
+                    <img
+                      src={imageSrc}
+                      alt="Loading Picture"
+                      className="w-full h-full object-cover"
+                    />
+                    <img
+                      src={imageSrc}
+                      alt="Loading Picture"
+                      className="w-full h-full object-cover"
+                    />
+                    <img
+                      src={imageSrc}
+                      alt="Loading Picture"
+                      className="w-full h-full object-cover"
+                    />
+                  </Carousel>
                 </div>
-                <div className="flex flex-row space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-lg shadow-black">
-                  <div className="text-xs text-green-600">
-                    <FaCircle />
+                <p className="lavender font-normal bebas text-md text-justify">
+                  {description}
+                </p>
+                <div className="space-y-6">
+                  <div>
+                    <div className="lavender text-start font-bold">
+                      Tools used:
+                    </div>
+                    <div className="grid grid-cols-3 gap-3 w-full py-3">
+                      <div className="flex flex-row space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-md shadow-black">
+                        <div className="text-xs text-blue-600">
+                          <FaCircle />
+                        </div>
+                        <span>React</span>
+                      </div>
+                      <div className="flex flex-row space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-md shadow-black">
+                        <div className="text-xs text-green-600">
+                          <FaCircle />
+                        </div>
+                        <span>ExpressJS</span>
+                      </div>
+                      <div className="flex flex-row  space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-md shadow-black">
+                        <div className="text-xs text-green-900">
+                          <FaCircle />
+                        </div>
+                        <span>MongoDB</span>
+                      </div>
+                      <div className="flex flex-row  space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-md shadow-black">
+                        <div className="text-xs text-yellow-600">
+                          <FaCircle />
+                        </div>
+                        <span>Node</span>
+                      </div>
+                    </div>
                   </div>
-                  <span>ExpressJS</span>
                 </div>
-                <div className="flex flex-row  space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-lg shadow-black">
-                  <div className="text-xs text-green-900">
-                    <FaCircle />
-                  </div>
-                  <span>MongoDB</span>
-                </div>
-                <div className="flex flex-row  space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-lg shadow-black">
-                  <div className="text-xs text-yellow-600">
-                    <FaCircle />
-                  </div>
-                  <span>Node</span>
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://globaltekrails.onrender.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#2da1ad] lavender font-bold text-black shadow-lg shadow-black w-28 py-1 px-2 text-center rounded-2xl hover:scale-110 transition duration-300 ease-in-out"
-            >
-              View Project
-            </a>
+              </Modal.Body>
+              <Modal.Footer className="gunmetal">
+                <a
+                  href={projLink}
+                  target="_blank"
+                  className="flex flex-row  space-x-2 bg-[#2da1ad] rounded-3xl py-1 px-2 text-sm items-center justify-center shadow-md shadow-black lavender font-bold hover:scale-110 transition duration-300 ease-in-out"
+                >
+                  See Project
+                </a>
+              </Modal.Footer>
+            </Modal>
           </div>
-        </div>
+        </button>
       </div>
     </>
   );

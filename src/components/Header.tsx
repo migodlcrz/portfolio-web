@@ -3,6 +3,7 @@ import "../App.css";
 import Avatar from "../images/avatar.png";
 import Grow from "@mui/material/Grow";
 import { FaBars } from "react-icons/fa"; // Import the hamburger icon
+import { Dropdown } from "flowbite-react";
 
 interface HeaderProps {
   scrollToLanding: () => void;
@@ -19,16 +20,12 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const [checked, setChecked] = useState(false);
   const [headerBackground, setHeaderBackground] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // Track if it's mobile
 
   useEffect(() => {
     setChecked(!checked);
     window.addEventListener("scroll", handleScroll);
-    handleResize(); // Check initial size
-    window.addEventListener("resize", handleResize); // Listen for resize changes
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -40,48 +37,72 @@ const Header: React.FC<HeaderProps> = ({
     }
   };
 
-  const handleResize = () => {
-    // Check if the screen width is below a certain size (e.g., 768px for tablets)
-    setIsMobile(window.innerWidth <= 768);
-  };
-
   return (
     <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
       <div
-        className={`Header: lavender flex flex-row justify-between fixed text-2xl z-10 p-6 pr-10 w-full font-bold ${
+        className={`Header: lavender flex flex-row justify-between fixed text-2xl z-10 p-6 pr-20 w-full font-bold ${
           headerBackground ? "bg-[#00B9AE] shadow-black shadow-md" : ""
         }`}
       >
-        <div className="flex flex-row space-x-4 w-2/5 text-start">
+        <div className="flex flex-row space-x-4 w-1/2 text-start">
           <img className="rounded-image" src={Avatar} />
-          {isMobile ? ( // Render hamburger icon for mobile
-            <FaBars
-              onClick={scrollToLanding}
-              className="text-[#022B3A] cursor-pointer"
-            />
-          ) : (
-            <button className="hover:text-[#022B3A]" onClick={scrollToLanding}>
-              My Portfolio
-            </button>
-          )}
+          <button
+            className="hidden lg:block hover:text-[#022B3A]"
+            onClick={scrollToLanding}
+          >
+            My Portfolio
+          </button>
         </div>
-        {isMobile ? null : ( // Don't render the rest of the menu for mobile
-          <div className="flex flex-row justify-between w-3/5">
-            <button className="hover:text-[#022B3A]" onClick={scrollToAboutMe}>
-              About Me
-            </button>
-            <button
-              className="hover:text-[#022B3A]"
-              onClick={scrollToExperience}
-            >
-              Experience
-            </button>
-            <button className="hover:text-[#022B3A]" onClick={scrollToProject}>
-              Projects
-            </button>
-            <button className="hover:text-[#022B3A]">Contact</button>
-          </div>
-        )}
+        <div className="flex flex-row justify-between w-1/2">
+          <button
+            className="hidden lg:block hover:text-[#022B3A]"
+            onClick={scrollToAboutMe}
+          >
+            About Me
+          </button>
+          <button
+            className="hidden lg:block hover:text-[#022B3A]"
+            onClick={scrollToExperience}
+          >
+            Experience
+          </button>
+          <button
+            className="hidden lg:block hover:text-[#022B3A]"
+            onClick={scrollToProject}
+          >
+            Projects
+          </button>
+          <button
+            className="hidden lg:block hover:text-[#022B3A]"
+            onClick={scrollToProject}
+          >
+            Contacts
+          </button>
+        </div>
+        <div className="lg:hidden">
+          <Dropdown
+            // label="Menu"
+            inline
+            label={
+              <>
+                <FaBars />
+              </>
+            }
+            dismissOnClick={false}
+          >
+            <Dropdown.Item>
+              <button
+                className="hover:text-[#022B3A]"
+                onClick={scrollToAboutMe}
+              >
+                About Me
+              </button>
+            </Dropdown.Item>
+            <Dropdown.Item>Experience</Dropdown.Item>
+            <Dropdown.Item>Projects</Dropdown.Item>
+            <Dropdown.Item>Contact</Dropdown.Item>
+          </Dropdown>
+        </div>
       </div>
     </Grow>
   );
