@@ -21,7 +21,7 @@ const Experience = () => {
           Experiences
         </h1>
       </div>
-      <div className="flex flex-col lg:flex-row w-full h-full lg:space-x-10">
+      <div className="flex flex-col lg:flex-row w-full h-full lg:space-x-10 space-y-4">
         <div className="gunmetal w-full lg:w-1/3 h-[90%] px-3 pb-12 pt-1 rounded-3xl shadow-md shadow-black">
           <div className="Buttons: flex justify-between w-20 pt-2">
             <div className="text-red-600 text-md">
@@ -65,7 +65,7 @@ const Experience = () => {
             <Icon name="MongoDB" imageUrl={MongoLogo} height="8" width="10" />
           </div>
         </div>
-        <div className="w-full lg:w-2/3">
+        <div className="w-full lg:w-2/3 space-y-4 lg:space-y-0">
           <AboutPanel
             title="Machine Learning Developer"
             text="Lorem ipsum dolor sit amet. In iure recusandae non voluptatem quia et culpa inventore qui voluptatem eveniet qui dolores distinctio ad adipisci voluptates At magnam voluptatem. Eum nostrum ipsam nam quis vitae ut accusamus commodi et ratione aspernatur."

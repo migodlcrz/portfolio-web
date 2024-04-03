@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../App.css";
-import Avatar from "../images/avatar.png";
+import Icon from "../images/avatar.png";
+import { Avatar } from "flowbite-react";
 import Grow from "@mui/material/Grow";
 import { FaBars } from "react-icons/fa"; // Import the hamburger icon
 import { Dropdown } from "flowbite-react";
@@ -45,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
         }`}
       >
         <div className="flex flex-row space-x-4 w-1/2 text-start">
-          <img className="hidden lg:block rounded-image" src={Avatar} />
+          <Avatar img={Icon} alt="avatar of Jese" rounded />
           <button
             className=" text-sm lg:text-xl hover:text-[#022B3A]"
             onClick={scrollToLanding}
