@@ -22,7 +22,7 @@ const Experience = () => {
         </h1>
       </div>
       <div className="flex flex-col lg:flex-row w-full h-full lg:space-x-10">
-        <div className="gunmetal w-full lg:w-1/3 h-[90%] px-3 pb-12 pt-1 rounded-3xl">
+        <div className="gunmetal w-full lg:w-1/3 h-[90%] px-3 pb-12 pt-1 rounded-3xl shadow-md shadow-black">
           <div className="Buttons: flex justify-between w-20 pt-2">
             <div className="text-red-600 text-md">
               <FaCircle />

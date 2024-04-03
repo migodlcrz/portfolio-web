@@ -33,7 +33,7 @@ const Introduction = () => {
     <div className="flex flex-col items-start mt-6">
       <div>
         <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
-          <h1 className="lavender text-md lg:text-3xl bebas font-bold">
+          <h1 className="lavender text-md lg:text-5xl bebas font-bold">
             Hi, I'm{" "}
             <span style={{ color: "#00B9AE", fontWeight: "bold" }}>
               <Typewriter

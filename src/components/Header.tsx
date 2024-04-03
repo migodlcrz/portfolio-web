@@ -40,14 +40,14 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
       <div
-        className={`Header: lavender flex flex-row justify-between fixed text-2xl z-10 p-6 pr-20 w-full font-bold ${
+        className={`Header: lavender flex flex-row justify-between fixed text-2xl z-10 p-6 lg:pr-20 w-full font-bold ${
           headerBackground ? "bg-[#00B9AE] shadow-black shadow-md" : ""
         }`}
       >
         <div className="flex flex-row space-x-4 w-1/2 text-start">
-          <img className="rounded-image" src={Avatar} />
+          <img className="hidden lg:block rounded-image" src={Avatar} />
           <button
-            className="hidden lg:block hover:text-[#022B3A]"
+            className=" text-sm lg:text-xl hover:text-[#022B3A]"
             onClick={scrollToLanding}
           >
             My Portfolio
@@ -82,6 +82,7 @@ const Header: React.FC<HeaderProps> = ({
         <div className="lg:hidden">
           <Dropdown
             // label="Menu"
+            placement="bottom"
             inline
             label={
               <>
