@@ -10,6 +10,13 @@ const Introduction = () => {
   const [showThirdTypewriter, setShowThirdTypewriter] = useState(false);
   const [checked, setChecked] = useState(false);
 
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth", // Smooth scrolling behavior
+    });
+  }
+
   useEffect(() => {
     setChecked(!checked);
     const timer = setTimeout(() => {
@@ -103,7 +110,10 @@ const Introduction = () => {
         </Grow>
       </div>
       <Grow in={checked} {...(checked ? { timeout: 4000 } : {})}>
-        <button className="bg-[#1F7A8C] bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black transition-transform hover:scale-105">
+        <button
+          onClick={scrollToBottom}
+          className="bg-[#1F7A8C] bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black transform transition-transform hover:scale-105"
+        >
           Contact Me
         </button>
       </Grow>

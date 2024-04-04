@@ -8,7 +8,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 const Footer = () => {
   return (
     <footer
-      className=" flex flex-col lg:flex-row text-white items-center w-full text-center lg:py-20 lg:px-48"
+      className=" flex flex-col lg:flex-row text-white items-center w-full text-center py-6 lg:py-20 lg:px-48 space-y-2 lg:space-y-0"
       style={{
         backgroundImage: "linear-gradient(to right, #255069, #183e54, #0f3c57",
       }}
