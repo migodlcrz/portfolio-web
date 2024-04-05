@@ -64,7 +64,7 @@ const App = () => {
       </div>
       <div
         id="aboutSection"
-        className="Second Panel: w-full h-screen py-2 px-6 lg:mt-10 lg:px-36"
+        className="Second Panel: w-full h-screen py-2 px-6 lg:px-36"
         style={{
           backgroundImage:
             "linear-gradient(to bottom right, #022b3a, #256278, #5e93a6",
