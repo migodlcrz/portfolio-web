@@ -15,7 +15,7 @@ import MongoLogo from "../images/mongodb.png";
 
 const Experience = () => {
   return (
-    <div className="Card: flex flex-col space-y-4 rounded-2xl h-[90%] lg:px-10 lg:py-10 items-start mt-10">
+    <div className="Card: flex flex-col space-y-4 rounded-2xl h-[90%] lg:px-10 lg:py-10 items-start lg:mt-10">
       <div className="">
         <h1 className="lavender text-sm lg:text-6xl bebas font-bold">
           Experiences
@@ -35,34 +35,47 @@ const Experience = () => {
             </div>
           </div>
           <div
-            className="grid grid-cols-3 gap-4 overflow-y-auto max-h-full bg-black py-6 px-6 pt-6 mt-2 rounded-2xl"
+            className="overflow-y-auto max-h-full space-y-3 bg-black py-6 px-3 pt-6 mt-2 rounded-2xl"
             style={{
               scrollbarWidth: "thin",
               scrollbarColor: "#888 transparent",
               WebkitOverflowScrolling: "touch",
             }}
           >
-            <Icon name="HTML" imageUrl={HtmlLogo} height="10" width="12" />
-            <Icon name="CSS" imageUrl={CSSLogo} height="10" width="7" />
-            <Icon
-              name="Javascript"
-              imageUrl={JavaScriptLogo}
-              height="10"
-              width="7"
-            />
-            <Icon name="C++" imageUrl={CplusplusLogo} height="10" width="10" />
-            <Icon name="Python" imageUrl={PythonLogo} height="10" width="10" />
-            <Icon name="Java" imageUrl={JavaLogo} height="7" width="16" />
-            <Icon name="Node" imageUrl={NodeLogo} height="10" width="9" />
-            <Icon name="React" imageUrl={ReactLogo} height="10" width="10" />
-            <Icon name="Vue" imageUrl={VueLogo} height="9" width="10" />
-            <Icon
-              name="Express"
-              imageUrl={ExpressLogo}
-              height="10"
-              width="10"
-            />
-            <Icon name="MongoDB" imageUrl={MongoLogo} height="8" width="10" />
+            <div className="lavender font-bold text-xs lg:text-2xl">Skill</div>
+            <div className="grid grid-cols-3 gap-4">
+              <Icon name="HTML" imageUrl={HtmlLogo} height="10" width="12" />
+              <Icon name="CSS" imageUrl={CSSLogo} height="10" width="7" />
+              <Icon
+                name="Javascript"
+                imageUrl={JavaScriptLogo}
+                height="10"
+                width="7"
+              />
+              <Icon
+                name="C++"
+                imageUrl={CplusplusLogo}
+                height="10"
+                width="10"
+              />
+              <Icon
+                name="Python"
+                imageUrl={PythonLogo}
+                height="10"
+                width="10"
+              />
+              <Icon name="Java" imageUrl={JavaLogo} height="7" width="16" />
+              <Icon name="Node" imageUrl={NodeLogo} height="10" width="9" />
+              <Icon name="React" imageUrl={ReactLogo} height="10" width="10" />
+              <Icon name="Vue" imageUrl={VueLogo} height="9" width="10" />
+              <Icon
+                name="Express"
+                imageUrl={ExpressLogo}
+                height="10"
+                width="10"
+              />
+              <Icon name="MongoDB" imageUrl={MongoLogo} height="8" width="10" />
+            </div>
           </div>
         </div>
         <div className="w-full lg:w-2/3 space-y-4 lg:space-y-0">

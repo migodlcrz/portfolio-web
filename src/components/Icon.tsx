@@ -15,7 +15,7 @@ const Icon: React.FC<IconProps> = ({ name, imageUrl, height, width }) => {
           <img src={imageUrl} alt={name} className={`h-${height} w-${width}`} />
         </div>
       </div>
-      <h1 className="lavender text-md font-bold bebas">{name}</h1>
+      <h1 className="lavender text-xs lg:text-md font-bold bebas">{name}</h1>
     </div>
   );
 };

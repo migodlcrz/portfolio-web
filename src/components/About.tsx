@@ -7,7 +7,7 @@ import AboutPanel from "./AboutPanel";
 
 const About = () => {
   return (
-    <div className="Card: flex flex-col space-y-4 gunmetal rounded-2xl shadow-lg shadow-black h-[90%] p-10 items-start mt-36 lg:mt-20">
+    <div className="Card: flex flex-col space-y-4 gunmetal rounded-2xl shadow-lg shadow-black h-[75%] p-10 items-start mt-10 lg:mt-20">
       <div className="">
         <h1 className="lavender text-lg lg:text-6xl bebas font-bold">
           About Me

@@ -13,7 +13,7 @@ const Introduction = () => {
   function scrollToBottom() {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      behavior: "smooth", // Smooth scrolling behavior
+      behavior: "smooth",
     });
   }
 
@@ -37,10 +37,10 @@ const Introduction = () => {
   }, [showSecondTypewriter]);
 
   return (
-    <div className="flex flex-col items-start mt-6">
+    <div className="flex flex-col items-start lg:mt-6">
       <div>
         <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
-          <h1 className="lavender text-md lg:text-5xl bebas font-bold">
+          <h1 className="lavender text-base lg:text-md lg:text-5xl bebas font-bold">
             Hi, I'm{" "}
             <span style={{ color: "#00B9AE", fontWeight: "bold" }}>
               <Typewriter
@@ -112,7 +112,7 @@ const Introduction = () => {
       <Grow in={checked} {...(checked ? { timeout: 4000 } : {})}>
         <button
           onClick={scrollToBottom}
-          className="bg-[#1F7A8C] bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black transform transition-transform hover:scale-105"
+          className="bg-[#1F7A8C] text-xs lg:text-lg bebas font-bold lavender mt-7 rounded-3xl px-3 py-2 shadow-lg shadow-black transform transition-transform hover:scale-105"
         >
           Contact Me
         </button>

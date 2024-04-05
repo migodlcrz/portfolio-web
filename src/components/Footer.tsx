@@ -30,13 +30,13 @@ const Footer = () => {
           <h1>
             <AiFillLinkedin />
           </h1>
-          <h1> lorenzo.cap.delacruz@gmail.com</h1>
+          <h1> https://www.linkedin.com/in/Lorenzo</h1>
         </div>
         <div className="flex flex-row space-x-2  lavender font-bold items-center justify-center">
           <h1>
             <AiFillGithub />
           </h1>
-          <h1> lorenzo.cap.delacruz@gmail.com</h1>
+          <h1> https://github.com/migodlcrz</h1>
         </div>
       </div>
     </footer>
