@@ -40,7 +40,7 @@ const Introduction = () => {
     <div className="flex flex-col items-start lg:mt-6">
       <div>
         <Grow in={checked} {...(checked ? { timeout: 1000 } : {})}>
-          <h1 className="lavender text-base lg:text-md lg:text-5xl bebas font-bold">
+          <h1 className="lavender text-base lg:text-5xl bebas font-bold">
             Hi, I'm{" "}
             <span style={{ color: "#00B9AE", fontWeight: "bold" }}>
               <Typewriter
@@ -69,7 +69,7 @@ const Introduction = () => {
               <div className="text-red-600 text-md">
                 <FaCircle />
               </div>
-              <div className="text-yellow-500 ttext-md">
+              <div className="text-yellow-500 text-md">
                 <FaCircle />
               </div>
               <div className="text-green-600 text-md">

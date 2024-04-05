@@ -53,7 +53,7 @@ const App = () => {
             "linear-gradient(to top right, #022b3a, #256278, #5e93a6",
         }}
       >
-        <div className="Card: flex flex-col lg:flex-row my-10 h-[80%]">
+        <div className="Card: flex flex-col lg:flex-row my-10 lg:mt-20 h-[80%]">
           <div className="flex flex-col w-full lg:w-2/3 items-start">
             <Introduction />
           </div>
@@ -64,7 +64,7 @@ const App = () => {
       </div>
       <div
         id="aboutSection"
-        className="Second Panel: w-full h-screen py-2 px-6 lg:px-36"
+        className="Second Panel: w-full h-screen py-2 px-6 lg:mt-10 lg:px-36"
         style={{
           backgroundImage:
             "linear-gradient(to bottom right, #022b3a, #256278, #5e93a6",
@@ -84,7 +84,7 @@ const App = () => {
       </div>
       <div
         id="projectSection"
-        className="Fourth Panel: w-full h-screen py-2 px-6 lg:px-36"
+        className="Fourth Panel: w-full h-screen py-10 px-6 lg:px-36"
         style={{
           backgroundImage:
             "linear-gradient(to bottom right, #022b3a, #256278, #5e93a6",
